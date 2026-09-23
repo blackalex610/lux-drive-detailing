@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #f3efe8;
+  --color-surface: #ffffff;
+  --color-surface2: #eae5db;
+  --color-ink: #17140f;
+  --color-dim: #736e63;
+  --color-live: #2f9e5b;
+
+  --font-display: "Plus Jakarta Sans", ui-sans-serif, sans-serif;
+  --font-body: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body {
+  background: var(--color-bg);
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+::selection {
+  background: var(--color-ink);
+  color: var(--color-surface);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 3px;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 26s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+  * {
+    transition: none !important;
+  }
+}
+
+.ticket {
+  position: relative;
+  border-top: 2px dashed rgba(23, 20, 15, 0.14);
+}
+.ticket::before,
+.ticket::after {
+  content: "";
+  position: absolute;
+  top: -9px;
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  background: var(--color-bg);
+  border: 2px dashed rgba(23, 20, 15, 0.14);
+}
+.ticket::before {
+  left: -9px;
+}
+.ticket::after {
+  right: -9px;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
