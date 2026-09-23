@@ -7,3 +7,7 @@ export const ADDRESS_LINE2 = 'кв. Хаджи Димитър, 1510 София'
 export const MAPS_URL =
   'https://www.google.com/maps/search/?api=1&query=' +
   encodeURIComponent('Lux Drive Detailing, ул. Васил Петлешков 1, София')
+export const MAPS_EMBED_URL =
+  'https://www.google.com/maps?q=' +
+  encodeURIComponent('Lux Drive Detailing, ул. Васил Петлешков 1, София') +
+  '&output=embed'

@@ -1,4 +1,4 @@
-import { ADDRESS_LINE1, ADDRESS_LINE2, EMAIL, IG_URL, MAPS_URL, PHONE_DISPLAY, PHONE_TEL } from '../constants'
+import { ADDRESS_LINE1, ADDRESS_LINE2, EMAIL, IG_URL, MAPS_EMBED_URL, MAPS_URL, PHONE_DISPLAY, PHONE_TEL } from '../constants'
 import { useSofiaStatus } from '../hooks/useSofiaStatus'
 import SectionHeading from './SectionHeading'
 
@@ -105,6 +105,29 @@ export default function LocationCTA() {
               Запази през Instagram
             </a>
           </div>
+        </div>
+      </div>
+
+      <div className="max-w-5xl mx-auto mt-10">
+        <div className="relative rounded-2xl overflow-hidden border border-ink/10 shadow-md shadow-ink/5">
+          <iframe
+            src={MAPS_EMBED_URL}
+            className="w-full h-72 sm:h-96"
+            style={{ border: 0 }}
+            loading="lazy"
+            allowFullScreen
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Карта с местоположението на Lux Drive Detailing"
+          />
+          <a
+            href={MAPS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-surface/95 backdrop-blur px-4 py-2 text-xs font-medium shadow-md shadow-ink/10 hover:bg-surface transition-colors"
+          >
+            <span aria-hidden="true">📍</span>
+            {ADDRESS_LINE1}
+          </a>
         </div>
       </div>
     </section>
